@@ -8,6 +8,7 @@ interface Props {
 }
 
 export default function Buscador({ busca, setBusca }: Props) {
+   
     return (
         <div className={styles.buscador}>
             <input value={busca}
