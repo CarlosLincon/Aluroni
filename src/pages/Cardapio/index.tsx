@@ -21,7 +21,7 @@ export default function Cardapio( ) {
                 <h3 className={styles.cardapio__titulo}>Cardápio</h3>
                 <Buscador busca={busca} setBusca={setBusca} />
                 <div className={styles.cardapio__filtros}>
-                    <Filtros filtro={filtro} setFiltro={setFiltro} />
+                    <Filtros filtro={filtro} setFiltro={setFiltro} busca={busca}/>
                     <Ordenador ordenador={ordenador} setOrdenador={setOrdenador}/>
                 </div>
                 <Itens busca={busca} filtro={filtro} ordenador={ordenador}/>
