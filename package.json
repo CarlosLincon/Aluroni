@@ -1,7 +1,7 @@
 {
   "name": "aluroni",
   "version": "0.1.0",
-  "homepage": "github-page/",
+  "homepage": "https://{CarlosLincon}.github.io/{Aluroni}",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -21,6 +21,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "sass": "^1.49.0",
     "typescript-plugin-css-modules": "^3.4.0"
   }
