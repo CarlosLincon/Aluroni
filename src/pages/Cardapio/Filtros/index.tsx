@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import filtros from "./filtros.json";
 import styles from './Filtros.module.scss';
 import classNames from 'classnames';
@@ -6,31 +6,14 @@ import classNames from 'classnames';
 type IOpcao = typeof filtros[0];
 
 interface Props {
-  filtro: number | null,
-  setFiltro: React.Dispatch<React.SetStateAction<number | null>>,
-  busca: string;
+  filtro: number | null;
+  setFiltro: React.Dispatch<React.SetStateAction<number | null>>
 }
 
-export default function Filtros({ filtro, setFiltro, busca }: Props) {
-  let texto;
-  useEffect(() => {
-    texto = busca.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-
-
-    for (let i = 0; i < filtros.length; i++) {
-      
-      if (texto == filtros[i].label.toLocaleLowerCase()) {
-        selecionarFiltro(filtros[i]);
-      } 
-    }
-
-  }, [busca])
+export default function Filtros({ filtro, setFiltro }: Props) {
 
   function selecionarFiltro(opcao: IOpcao) {
-
-    if (filtro === opcao.id) {
-      return setFiltro(null);
-    }
+    if (filtro === opcao.id) return setFiltro(null);
     return setFiltro(opcao.id);
   }
   return (
@@ -46,4 +29,3 @@ export default function Filtros({ filtro, setFiltro, busca }: Props) {
     </div>
   )
 }
-
